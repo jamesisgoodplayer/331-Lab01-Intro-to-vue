@@ -12,11 +12,25 @@
 
 <body>
     <div id="app">
-        <h1>Product goes here</h1>
+        <div class="nav-bar"></div>
+        <div class="cart">
+            <h2>Cart</h2>
+          <ul>
+            <li v-for="item in cartItems" :key="item.id">
+                Product ID: {{ item.id }} - Quantity: {{ item.quantity }}
+                <button @click="removeFromCart(item.id)">Remove</button>
+            </li>
+          </ul>
+        </div>
+        <product-display :premium="premium" :details="Pdetails" @add-to-cart="updateCart"></product-display>
     </div>
 
     <!-- Import Js -->
-    <script src="./main.js"></script>
+     <script src="./components/ProductDisplay.js"></script>
+     <script src="./components/ProductDetails.js"></script>
+     <script src="./components/ReviewForm.js"></script>
+     <script src="./components/ReviewList.js"></script>
+     <script src="./main.js"></script>
 </body>
 
 </html>

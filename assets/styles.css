@@ -89,6 +89,7 @@ li {
 }
 
 .out-of-stock-img {
+  filter: grayscale(100%);
   opacity:0.5
 }
 
